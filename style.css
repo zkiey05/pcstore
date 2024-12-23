@@ -78,6 +78,22 @@ header nav ul li a {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Để các phần tử con có thể được định vị */
+}
+
+/* Hiệu ứng hover cho sản phẩm: Khi hover vào sản phẩm, hiển thị mức giá */
+.product-item:hover .price-wrapper {
+    visibility: visible;  /* Hiển thị mức giá */
+    opacity: 1;           /* Đặt độ mờ về 1 để làm cho mức giá rõ ràng */
+    transition: opacity 0.3s ease, visibility 0.3s ease;  /* Hiệu ứng mượt mà */
+}
+
+/* Ẩn giá mặc định */
+.price-wrapper {
+    margin: 15px 0;
+    visibility: hidden;  /* Mức giá sẽ bị ẩn khi không hover */
+    opacity: 0;          /* Độ mờ của mức giá là 0 */
+    transition: opacity 0.3s ease, visibility 0.3s ease;  /* Hiệu ứng mượt mà khi hiển thị */
 }
 
 .product-item img {
@@ -85,10 +101,7 @@ header nav ul li a {
     height: auto;
 }
 
-.price-wrapper {
-    margin: 15px 0;
-}
-
+/* Mức giá */
 .price {
     font-size: 1.2rem;
     color: #e74c3c;
